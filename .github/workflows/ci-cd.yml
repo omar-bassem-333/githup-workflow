@@ -15,7 +15,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # ---------- CI: runs on every push and pull request ----------
   ci:
     name: CI (validate)
     runs-on: ubuntu-latest
@@ -31,7 +30,6 @@ jobs:
           root: .
           format: text
 
-  # ---------- CD: runs only on main, and only if CI passed ----------
   deploy:
     name: CD (deploy to GitHub Pages)
     needs: ci
@@ -46,9 +44,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+
+      - name: Collect site files
+        run: |
+          mkdir _site
+          cp index.html _site/
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
