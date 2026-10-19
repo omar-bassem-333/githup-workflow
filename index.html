@@ -1,26 +1,200 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Omar Bassem</title>
+  <title>Student Team</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 1rem 1.5rem;
+      min-height: 100vh;
+      padding: 3rem 1.5rem;
       background: #e9eee3;
       color: #1d2b1f;
-      font: 1rem/1.4 system-ui, sans-serif;
+      font: 1rem/1.5 system-ui, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    h1 { margin: 0; font: 700 1.1rem/1.3 Georgia, serif; }
-    p { margin: 0; font-size: 0.9rem; color: #5d6b5f; }
+
+    .container {
+      width: 100%;
+      max-width: 650px;
+      padding: 2.5rem;
+      background: #f8faf5;
+      border: 1px solid #d5dfd0;
+      border-radius: 20px;
+      box-shadow: 0 12px 35px #1d2b1f12;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .label {
+      display: inline-block;
+      padding: 0.35rem 0.8rem;
+      margin-bottom: 0.8rem;
+      border-radius: 20px;
+      background: #e1eadb;
+      color: #466348;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font: 700 clamp(1.8rem, 5vw, 2.4rem)/1.2 Georgia, serif;
+    }
+
+    header p {
+      margin: 0.7rem 0 0;
+      color: #687769;
+      font-size: 0.95rem;
+    }
+
+    .students {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .student {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem;
+      background: #ffffff;
+      border: 1px solid #e0e7dc;
+      border-radius: 14px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .student:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px #1d2b1f10;
+    }
+
+    .number {
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #e5eddf;
+      color: #35543a;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .details {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .details h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .details p {
+      margin: 0.25rem 0 0;
+      color: #718071;
+      font-size: 0.85rem;
+    }
+
+    .id {
+      flex-shrink: 0;
+      padding: 0.4rem 0.65rem;
+      border-radius: 8px;
+      background: #f0f3ec;
+      color: #425a44;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e0e7dc;
+      color: #7a8779;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        padding: 1.4rem;
+      }
+
+      .student {
+        gap: 0.7rem;
+        padding: 0.9rem;
+      }
+
+      .number {
+        width: 38px;
+        height: 38px;
+      }
+
+      .id {
+        font-size: 0.72rem;
+        padding: 0.35rem;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Omar Bassem</h1>
-    <p>ID: 20240364</p>
-  </header>
+  <main class="container">
+    <header>
+      <span class="label">Team Members</span>
+      <h1>Github Workflow</h1>
+      <p>Meet the students behind the task.</p>
+    </header>
+
+    <section class="students">
+      <article class="student">
+        <div class="number">01</div>
+        <div class="details">
+          <h2>Omar Bassem</h2>
+          <p>Student Member</p>
+        </div>
+        <span class="id">ID: 20240364</span>
+      </article>
+
+      <article class="student">
+        <div class="number">02</div>
+        <div class="details">
+          <h2>Ahmed Youssef</h2>
+          <p>Student Member</p>
+        </div>
+        <span class="id">ID: 20240063</span>
+      </article>
+
+      <article class="student">
+        <div class="number">03</div>
+        <div class="details">
+          <h2>Student Three</h2>
+          <p>Student Member</p>
+        </div>
+        <span class="id">ID: 00000000</span>
+      </article>
+    </section>
+
+    <footer>
+      Academic Task · Team of 3 Students
+    </footer>
+  </main>
 </body>
 </html>
- 
